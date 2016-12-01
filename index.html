@@ -1,254 +1,118 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  <meta charset="utf-8">
-    <title>Chicken Chicken Chicken</title>
-      <style>
-		body {
-			background-color: rgb(218,243,134);
-		}
-        #web-title {
-			color: white;
-			font-family: monospace;
-			font-weight: bold ;
-			letter-spacing: 10px;
-			text-align: center;
-        }
-		#menu-things {
-			color: white;
-			font-family: monospace;
-			font-weight: bold ;
-			text-align: center;
-		}
-		
-		#menu-title {
-			background-color: rgb(203,232,107);
-			width: 300px;
-			float: left;
-			margin: 10px;
-			border-radius: 20px;
-			padding: 5px;
-			position: fixed;
-		}
-		#left-menu {
-			background-color: rgb(203,232,107);
-			width: 300px;
-			height: 475px;
-			margin: 125px 10px 10px 10px;
-			float: left;
-			clear: left;
-			border-radius: 20px;
-			padding: 5px;
-			position: fixed;
-		}
-		#content {
-			background-color: white;
-			width: 900px;
-			height: 540px;
-			float:right;
-			margin: 10px 10px 10px 350px;
-			padding: 30px;
-			border-radius: 20px;
-			position: absolute;
-			overflow: auto;
+background(255);
 
-		}
-		
-		#big-title {
-			font-family: monospace;
-			text-decoration: underline;
-			font-weight: bold;
-		}
-		
-		#med-title {
-			font-family: monospace;
-			font-weight: bold;
-		}
-		
-		p {
-			font-family: monospace;
-		}
-		
-		ul {
-			font-family: monospace;
-		}
-		table, tr, th {
-			border: 1px solid black;
-			border-collapse: collapse;
-			padding: 5px;
-			font-family: monospace;
-		}
-		#table-content {
-			font-weight: normal;
-		}
-		#dark-cell {
-			background-color: rgb(230,230,230);
-		}
-		#darker-cell {
-			background-color: rgb(200,200,200);
-		}
-      </style>
-  </head>
-  <body>
-	<div id="menu-title">
-		<h1 id="web-title">CHICKEN CHICKEN</h1>
-	</div>
-	
-	<div id="left-menu">
-		<h2 id="menu-things">CHICKEN</h2>
-		<h2 id="menu-things">CHICKEN</h2>
-		<h2 id="menu-things">CHICKEN</h2>
-		<h2 id="menu-things">CHICKEN CHICKEN</h2>
-		<h2 id="menu-things">CHICKEN CHICKEN</h2>
-		<h2 id="menu-things">CHICKEN CHICKEN</h2>
-		<h2 id="menu-things">CHICKEN CHICKEN</h2>
-		
-	</div>
-	
-	<div id="content">
-		<h1 id="big-title">CHICKEN CHICKEN CHICKEN</h1>
-		<h2 id="med-title">CHICKEN CHICKEN</h2>
-		<p>Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken. Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken. Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken.</p>
+fill(255);
+noStroke();
+rect(0, 0, 400, 311);//whitespace
+
+fill(180);
+noStroke();
+rect(0, 310, 400, 90);//gray pallet area
+
+stroke(0);
+strokeWeight(2);
+fill(220);
+rect(9, 320, 70, 20);
+fill(0);
+text("C L E A R", 17, 335);//CLEAR button
+
+fill(220);
+rect(107, 320, 40, 20);
+fill(0);
+text("o", 123, 333);//smaller brush
+
+fill(220);
+rect(156, 320, 40, 20);
+fill(0);
+text("O", 171, 334);//bigger brush
+
+var brushSize = 5;
+mouseDragged = function() {
+    noStroke();
+    fill(0);
+    ellipse(mouseX, mouseY, brushSize, brushSize);
+};
+
+var pallet = [
+    color(255, 0, 0),
+    color(255, 110, 0),
+    color(255, 255, 0),
+    color(50, 255, 0),
+    color(0, 0, 255),
+    color(150, 0, 255),
+    color(0, 0, 0),
+    color(255, 255, 255),
+    ];
+
+for (var i = 0; i < 8; i++) {
+    strokeWeight(3);
+stroke(0);
+fill(pallet[i]);
+rect(i*49+9, 350, 40, 40);
+}//color swatches
+
+mouseClicked = function() {
+    if(mouseX > 10 && mouseX < 50 && mouseY < 390 && mouseY > 350) {
+        mouseDragged = function() {
+        noStroke();
+        fill(pallet[0]);
+        ellipse(mouseX, mouseY, 5, 5);//red
+        };
+            } else if(mouseX > 60 && mouseX < 100 && mouseY < 390 && mouseY > 350) {
+              mouseDragged = function() {
+        noStroke();
+        fill(pallet[1]);
+        ellipse(mouseX, mouseY, 5, 5);//orange
+        };
+            } else if(mouseX > 110 && mouseX < 150 && mouseY < 390 && mouseY > 350) {
+              mouseDragged = function() {
+        noStroke();
+        fill(pallet[2]);
+        ellipse(mouseX, mouseY, 5, 5);//yellow
+        };
+            } else if(mouseX > 160 && mouseX < 200 && mouseY < 390 && mouseY > 350) {
+              mouseDragged = function() {
+        noStroke();
+        fill(pallet[3]);
+        ellipse(mouseX, mouseY, 5, 5);//green
+        };
+            } else if(mouseX > 210 && mouseX < 250 && mouseY < 390 && mouseY > 350) {
+              mouseDragged = function() {
+        noStroke();
+        fill(pallet[4]);
+        ellipse(mouseX, mouseY, 5, 5);//blue
+        };
+            } else if(mouseX > 260 && mouseX < 300 && mouseY < 390 && mouseY > 350) {
+              mouseDragged = function() {
+        noStroke();
+        fill(pallet[5]);
+        ellipse(mouseX, mouseY, 5, 5);//purple
+        };
+            } else if(mouseX > 310 && mouseX < 350 && mouseY < 390 && mouseY > 350) {
+              mouseDragged = function() {
+        noStroke();
+        fill(pallet[6]);
+        ellipse(mouseX, mouseY, 5, 5);//black
+        };
+            } else if(mouseX > 360 && mouseX < 390 && mouseY < 390 && mouseY > 350) {
+              mouseDragged = function() {
+        noStroke();
+        fill(pallet[7]);
+        ellipse(mouseX, mouseY, 5, 5);//white
+        };
+            } else if(mouseX > 107 && mouseX < 147 && mouseY < 340 && mouseY > 320) {
+                brushSize -= 2;//shrink brush
+                
+            } else if(mouseX > 156 && mouseX < 196 && mouseY < 340 && mouseY > 320) {
+                brushSize += 2;//grow brush
+                
+            } else if(mouseX > 9 && mouseX < 79 && mouseY < 340 && mouseY > 320) {
+                fill(255);
+                noStroke();
+                rect(0, 0, 400, 310);//redraw whitespace
+            }
+};
 
 
-		<p>Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken. Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken. Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken.</p><br>
-		
-		<p><strong>CHICKEN CHICKEN</strong><br>
-			<ul>
-				<li>Chicken</li>
-				<li>Chicken</li>
-				<li>Chicken</li>
-				<li>Chicken</li>
-				<li>Chicken chicken</li>
-				<li>Chicken chicken</li>
-			</ul>
-		</p>
-		<br>
-		<p><strong>CHICKEN CHICKEN</strong>
-			<ul>
-				<li>Chicken: Chicken chicken</li>
-				<li>Chicken: Chicken chicken</li>
-				<li>Chicken: Chicken chicken</li>
-			</ul>
-		</p>
-		<br>
 
-		<h1 id="big-title">CHICKEN CHICKEN</h1>
-			<p>Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken. Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken. Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken. Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken.</p>
-			<br>
-			
-		<h1 id="big-title">CHICKEN</h1>
-			<p>Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken.</p>
 
-			<p><strong>CHICKEN-</strong> Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken.</p>
-			
-			<p><strong>CHICKEN-</strong> Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken.</p>
-			
-			<p><strong>CHICKEN-</strong> Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken.</p>
-			<br>
-		<h1 id="big-title">CHICKEN</h1>
-			<p>Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken.</p>
-			
-			<p><strong>Chicken</strong>
-			<table>
-				<tr>
-				<th id="darker-cell">Chicken</th>
-				<th id="dark-cell">Chicken</th>
-				<th id="dark-cell">Chicken/Chicken</th>
-				<th id="dark-cell">Chicken</th>
-				<th id="dark-cell">Chicken</th>
-				<th id="dark-cell">Chicken</th>
-				<th id="dark-cell">Chicken</th>
-				<th id="dark-cell">Chicken</th>
-				</tr>
-				<tr>
-				<th id="darker-cell">Chicken</th>
-				<th id="table-content">+2</th>
-				<th id="table-content">+1</th>
-				<th id="table-content">0</th>
-				<th id="table-content">0</th>
-				<th id="table-content">0</th>
-				<th id="table-content">-1</th>
-				<th id="table-content">-2</th>
-				</tr>
-				<tr>
-				<th id="darker-cell">Chicken</th>
-				<th id="table-content">-2</th>
-				<th id="table-content">-1</th>
-				<th id="table-content">0</th>
-				<th id="table-content">0</th>
-				<th id="table-content">0</th>
-				<th id="table-content">0</th>
-				<th id="table-content">0</th>
-			</table>
-			<br>
-			<p><strong>Chicken</strong>
-			<table>
-				<tr>
-				<th id="darker-cell">Chicken chicken</th>
-				<th id="dark-cell">Chicken</th>
-				<th id="dark-cell">Chicken/Chicken</th>
-				<th id="dark-cell">Chicken</th>
-				<th id="dark-cell">Chicken</th>
-				<th id="dark-cell">Chicken</th>
-				<th id="dark-cell">Chicken</th>
-				<th id="dark-cell">Chicken</th>
-				</tr>
-				<tr>
-				<th id="darker-cell">Chicken</th>
-				<th id="table-content">+2</th>
-				<th id="table-content">+1</th>
-				<th id="table-content">0</th>
-				<th id="table-content">-2</th>
-				<th id="table-content">0</th>
-				<th id="table-content">+1</th>
-				<th id="table-content">+2</th>
-				</tr>
-				<tr>
-				<th id="darker-cell">Chicken</th>
-				<th id="table-content">-2</th>
-				<th id="table-content">-1</th>
-				<th id="table-content">0</th>
-				<th id="table-content">0</th>
-				<th id="table-content">0</th>
-				<th id="table-content">-1</th>
-				<th id="table-content">-2</th>
-			</table>
-			<br>
-			
-		<h1 id="big-title">CHICKEN CHICKEN</h1>
-			<p>Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken. Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken. Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken. Chicken chicken chicken. Chicken chicken chicken chicken chicken. Chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken. Chicken chicken chicken chicken.</p>
-			
-			<table>
-				<tr>
-				<th id="darker-cell">Chicken chicken</th>
-				<th id="darker-cell">Chicken</th>
-				<th id="darker-cell">Chicken chicken</th>
-				<th id="darker-cell">Chicken chicken</th>
-				<th id="darker-cell">Chicken chicken</th>
-				<th id="darker-cell">Chicken chicken</th>
-				<th id="darker-cell">Chicken chicken</th>
-				</tr>
-				<tr>
-				<th id="dark-cell">Chicken chicken</th>
-				<th id="table-content">0</th>
-				<th id="table-content">1</th>
-				<th id="table-content">2</th>
-				<th id="table-content">3</th>
-				<th id="table-content">4</th>
-				<th id="table-content">5</th>
-				</tr>
-				<tr>
-				<th id="dark-cell">Chicken chicken</th>
-				<th id="table-content">0</th>
-				<th id="table-content">1</th>
-				<th id="table-content">3</th>
-				<th id="table-content">6</th>
-				<th id="table-content">10</th>
-				<th id="table-content">15</th>
-			</table>
-			
 
-		</div>
-  </body>
-</html>
