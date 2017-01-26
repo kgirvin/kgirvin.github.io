@@ -1,10 +1,56 @@
-<!DOCTYPE html>
-  <html>
-     <body>
+//secondary butt counter
 
-<p>Is Bodi smelly?</p>
-<label><input type="radio" name="bodi-odor">Yes</label>
-<label><input type="radio" name="bodi-odor">Yes</label>
 
-     </body>
-</html>
+var btnX = 20;
+var upY = 100;
+var downY = 260;
+var btnSize = 40;
+var fontX = 180;
+var fontY = 215;
+var statY = 90;
+
+var butts = 0;
+
+fill(0, 0, 0);
+textSize(20);
+text("HP", btnX+7, statY);
+text("A/S", btnX+58, statY);
+text("E", btnX+122, statY);
+text("AP", btnX+170, statY);
+text("CH", btnX+223, statY);
+text("CR", btnX+280, statY);
+text("DR", btnX+335, statY);
+
+textSize(50);
+text(0, fontX, fontY);//numbers
+
+var drawBehindNum = function() {
+noStroke();
+fill(255);
+rect(160, 155, 100, 100);//behind number
+};
+
+for(var i = 0; i < 15; i++) {
+    strokeWeight(3);
+    fill(0, 190, 0);
+    rect(i*55 + 18, upY, btnSize, btnSize);
+    rect(i*55 + 18, downY, btnSize, btnSize);//buttons
+    
+    fill(0);
+    textSize(40);
+    text("+", i*55 + 27, upY + 35);//stat up
+    text("-", i*55 + 32, upY + 190);//stat down
+}
+
+mouseClicked = function() {
+    for (var j= 0; j < 11; j++) {
+    if(mouseX > btnX && mouseX < btnX + 40 && mouseY > upY && mouseY < upY+40) {
+        drawBehindNum();
+        fill(0, 0, 0);
+        textSize(50);
+        text(j, fontX, fontY);//numbers
+        println("uh"+butts);
+        butts++;
+        }
+    }
+};
