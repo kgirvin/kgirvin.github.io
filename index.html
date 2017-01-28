@@ -81,47 +81,6 @@
             <button class="btn btn-block btn-danger">Smell <i class="fa fa-thumbs-down"></i></button>
           </div>
        
-        var drawBodi = function(headX, headY, headSize) {
-noFill();
-stroke(170, 170, 170); //gray
-strokeWeight(headSize - 17/20 * headSize);
-arc(headX - 1/10 * headSize, headY + 8/10 * headSize, headSize + 5/4 * headSize, headSize + 1/2 * headSize, 100, 225); //tail
-
-noStroke();
-fill(170, 170, 170); //gray
-ellipse(headX, headY, headSize, headSize); //head
-
-triangle(headX + 1/2 * headSize, headY - 13/20 * headSize, headX + 1/2 * headSize, headY, headX - 1/4 * headSize, headY); //earR
-triangle(headX - 1/2 * headSize, headY - 13/20 * headSize, headX - 1/2 * headSize, headY, headX + 1/2 * headSize, headY); //earL
-
-quad(headX - 5/10 * headSize, headY + 1/4 * headSize, headX - 7/10 * headSize, headY + 7/4 * headSize, headX + 7/10 * headSize, headY + 7/4 * headSize, headX + 1/2 * headSize, headY + 1/4 * headSize); //body
-
-noStroke();
-fill(255, 255, 255); //white
-var footW = headSize - 3/5 * headSize;
-var footH = headSize - 3/4 * headSize; 
-ellipse(headX, headY + 1/10 * headSize, headSize - 1/2 * headSize, headSize - 2/5 * headSize); //snout
-ellipse(headX, headY + 21/ 20 * headSize, headSize - 1/4 * headSize, headSize + 1/4 * headSize); //bib
-ellipse(headX - 13/20 * headSize, headY + 17/10 * headSize, footW, footH); //footfarL
-ellipse(headX - 1/4 * headSize, headY + 9/5 * headSize, footW, footH); //footmidL
-ellipse(headX + 1/4 * headSize, headY + 9/5 * headSize, footW, footH); //footmidR
-ellipse(headX + 13/20 * headSize, headY + 17/10 * headSize, footW, footH); //footfarR
-
-
-fill(255, 175, 0); //gold
-var eyeW = 20;
-var eyeH = 25;
-ellipse(headX + 3/10 * headSize, headY, 1/5 * headSize, 1/4 * headSize); //eyeR
-ellipse(headX - 1/4 * headSize, headY, 1/5 * headSize, 1/4 * headSize); //eyeL
-fill(0, 0, 0); //black
-ellipse(headX + 3/10 * headSize, headY, 1/20 * headSize, 3/20 * headSize); //pupilR
-ellipse(headX - 1/4 * headSize, headY, 1/20 * headSize, 3/20 * headSize); //pupilL
-
-fill(255, 150, 150); //pink
-triangle(headX - 3/20 * headSize, headY + 1/10 * headSize, headX + 1/5 * headSize, headY + 1/10 * headSize, headX, headY + 1/5 * headSize); //nose
-triangle(headX + 9/20 * headSize, headY - 1/2 * headSize, headX + 9/20 * headSize, headY - 1/4 * headSize, headX + 3/10 * headSize, headY - 2/5 * headSize); //insideearR
-triangle(headX - 9/20 * headSize, headY - 1/2 * headSize, headX - 9/20 * headSize, headY - 1/4 * headSize, headX - 3/10 * headSize, headY - 2/5 * headSize); //insideearL
-};
       </div>
   </body>
 </html>
