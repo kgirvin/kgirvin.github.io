@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+     
+    });
+    </script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
+    <style>
+      body {
+       background-color: rgb(120, 120, 120); 
+      }
+      
+      .form-bg {
+        background-color: silver;
+        width: 900px;
+        padding: 15px;
+        margin: 10px;
+        border-style: solid;
+        border-width: 3px;
+        border-color: rgb(255, 175, 0);
+        font-family: monospace;
+      }
+      
+      .bodi-pic {
+       width: 175px;
+      }
+      
+      p {
+       font-family: 'Sigmar One', cursive;
+       font-size: 20px;
+      }
+      
+      h2 {
+       font-family: 'Sigmar One', cursive;
+      }
+    </style>
+  </head>
+    <body>
+      <div class="form-bg">
+        
+        <h2 class="text-center">A Thing About Bodi <small>and his smelliness</small></h2>
+        <br>
+        
+      <form action="#">
+        <p>Is Bodi smelly?</p>
+        <label><input type="radio" name="bodi-odor">Yes</label>
+        <label><input type="radio" name="bodi-odor">Yes</label>
+        <br><br>
+        
+        <p>How smelly?</p>
+        <label><input type="checkbox" name="odor-strength">Really</label><br>
+        <label><input type="checkbox" name="odor-strength">Very</label><br>
+        <label><input type="checkbox" name="odor-strength">Quite</label><br>
+        <label><input type="checkbox" name="odor-strength">Overly</label><br>
+        <label><input type="checkbox" name="odor-strength">Supremely</label><br>
+        <label><input type="checkbox" name="odor-strength">http://www.thesaurus.com/browse/extremely</label>
+        <br><br>
+  
+        <div class="row">
+          <div class="col-md-8"><input type="text" class="form-control" placeholder="Ok, really, how smelly?"></div>
+          <div class="col-md-4"><button type="submit" class="btn btn-primary">Tell Me <i class="fa fa-paper-plane"></i></button></div>
+        </div>
+      </form>
+        <br>
+        <blockquote class="blockquote-reverse">
+          <p>"Bodi smells like butt-battered-butt, dipped in buttsauce."<p>
+            <footer>Me <cite title="Source Title">a few minutes ago </cite></footer></blockquote>
+           <br>
+            
+          <div class="bodi-pic">
+          <img src="http://i.imgur.com/DtWP0wg.png" class="img-responsive" alt="BODI!">
+            <br>
+            <button class="btn btn-block btn-primary">Appreciate <i class="fa fa-thumbs-up"></i></button>
+            <button class="btn btn-block btn-info">Inquire <i class="fa fa-info-circle"></i></button>
+            <button class="btn btn-block btn-danger">Smell <i class="fa fa-thumbs-down"></i></button>
+          </div>
+        <p>Some other thing abou Bodi.</p>
+      </div>
+  </body>
+</html>
